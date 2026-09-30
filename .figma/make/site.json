@@ -1,0 +1,10 @@
+{
+  "description": "Showcase your skills and projects with a visually striking developer portfolio designed for AI/ML engineers, enhancing professional visibility and engagement.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
