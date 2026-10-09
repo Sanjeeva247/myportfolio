@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import portraitImg from '@/imports/sanjeeva_hero_section.png'
 import aboutimage from '@/imports/SANJEEV.png'
+import Projects from './Projects';
 import {
   SiPython,
   SiReact,
@@ -264,7 +265,7 @@ function Navbar() {
         {/* Download Resume */}
         <a
   href="/SANJEEVA_KUMAR_AI_ENGINEER.docx"
-  download="Sanjeeva_Kumar_AI_Engineer_Resume.docx"
+  download="Sanjeeva_Kumar_Sr_Gen_AI_CV_Upd.docx"
   style={{
     display: 'flex',
     alignItems: 'center',
@@ -1757,753 +1758,753 @@ function SkillsSection() {
 }
 
 // ── Projects Section ─────────────────────────────────────────────────────────
-const PROJECTS = [
-  {
-    title: 'Agentic Crop Advisory & Field Intelligence Platform',
+// const PROJECTS = [
+//   {
+//     title: 'Agentic Crop Advisory & Field Intelligence Platform',
 
-    desc: 'Multi-agent advisory system for crop guidance, pest management, nutrition and product selection using multimodal inputs.',
+//     desc: 'Multi-agent advisory system for crop guidance, pest management, nutrition and product selection using multimodal inputs.',
 
-    tags: ['Agentic AI', 'LangGraph', 'VLM', 'RAG', 'Azure'],
+//     tags: ['Agentic AI', 'LangGraph', 'VLM', 'RAG', 'Azure'],
 
-    tagColors: [
-      '#A855F7',
-      '#3B82F6',
-      '#22D3EE',
-      '#F472B6',
-      '#60A5FA',
-    ],
+//     tagColors: [
+//       '#A855F7',
+//       '#3B82F6',
+//       '#22D3EE',
+//       '#F472B6',
+//       '#60A5FA',
+//     ],
 
-    gradient:
-      'linear-gradient(135deg, #0a2010 0%, #0f3020 50%, #071828 100%)',
+//     gradient:
+//       'linear-gradient(135deg, #0a2010 0%, #0f3020 50%, #071828 100%)',
 
-    accent: '#22D3EE',
+//     accent: '#22D3EE',
 
-    icon: '🌱',
+//     icon: '🌱',
 
-    image:
-      'https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=1200&q=80',
+//     image:
+//       'https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=1200&q=80',
 
-    overview:
-      'Built a supervisor-led multi-agent advisory platform for complex agricultural questions covering crop guidance, pest management, nutrition and product selection.',
+//     overview:
+//       'Built a supervisor-led multi-agent advisory platform for complex agricultural questions covering crop guidance, pest management, nutrition and product selection.',
 
-    architecture:
-      'User Query → Supervisor → Specialist Agents → Retrieval → Synthesis → Validation → Grounded Response',
+//     architecture:
+//       'User Query → Supervisor → Specialist Agents → Retrieval → Synthesis → Validation → Grounded Response',
 
-    contributions: [
-      'Designed a LangGraph state graph with planner, specialist, synthesis and validation nodes.',
-      'Implemented specialist agents for crop advisory, pest management, nutrition and research analysis.',
-      'Integrated retrieval tools, agent memory, tool calling and multimodal inputs.',
-      'Added deterministic guardrails, bounded retries and human-in-the-loop validation.',
-      'Implemented parallel specialist execution and agent trajectory evaluation.',
-    ],
+//     contributions: [
+//       'Designed a LangGraph state graph with planner, specialist, synthesis and validation nodes.',
+//       'Implemented specialist agents for crop advisory, pest management, nutrition and research analysis.',
+//       'Integrated retrieval tools, agent memory, tool calling and multimodal inputs.',
+//       'Added deterministic guardrails, bounded retries and human-in-the-loop validation.',
+//       'Implemented parallel specialist execution and agent trajectory evaluation.',
+//     ],
 
-    technologies:
-      'Python, LangGraph, LangChain, Azure OpenAI, GPT-4o, GPT-4o Vision, Azure Cosmos DB Vector Search, FastAPI, React, Docker',
-  },
-
-  {
-    title: 'Buy Box Price and Sales Price Prediction',
-
-    desc: 'Predicted Buy Box and Sales Prices using linear regression and PCA. Analysed key drivers and evaluated with R², RMSE, MAE and MSE.',
-
-    tags: [
-      'Machine Learning',
-      'Regression',
-      'PCA',
-      'Python',
-    ],
-
-    tagColors: [
-      '#F472B6',
-      '#A855F7',
-      '#60A5FA',
-      '#3B82F6',
-    ],
-
-    gradient:
-      'linear-gradient(135deg, #0c1428 0%, #101830 50%, #0a1020 100%)',
-
-    accent: '#A855F7',
-
-    icon: '📊',
-
-    image:
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
-
-    overview:
-      'Regression-based pricing prediction project focused on estimating Buy Box Price and Sales Price while identifying important pricing drivers.',
-
-    architecture:
-      'Data Preparation → EDA → Feature Engineering → PCA → Regression → Evaluation → Driver Analysis',
-
-    contributions: [
-      'Built a regression workflow for Buy Box Price and Sales Price prediction.',
-      'Applied PCA as part of dimensionality reduction and feature analysis.',
-      'Analysed important positive and negative pricing drivers.',
-      'Evaluated model performance using R², Adjusted R², RMSE, MAE and MSE.',
-      'Used statistical assumptions and model diagnostics to assess regression quality.',
-    ],
-
-    technologies:
-      'Python, Linear Regression, PCA, Feature Engineering, Statistical Analysis, R², Adjusted R², RMSE, MAE, MSE',
-  },
-
-  {
-    title: 'RAG Policy Q&A Assistant',
-
-    desc: 'Enterprise RAG solution for policy Q&A using Azure OpenAI and Cosmos DB with vector search and hybrid retrieval.',
-
-    tags: [
-      'Generative AI',
-      'RAG',
-      'Azure OpenAI',
-      'Vector Search',
-    ],
-
-    tagColors: [
-      '#A855F7',
-      '#22D3EE',
-      '#60A5FA',
-      '#3B82F6',
-    ],
-
-    gradient:
-      'linear-gradient(135deg, #0d0a1e 0%, #120d28 50%, #0a1228 100%)',
-
-    accent: '#168BFF',
-
-    icon: '🤖',
-
-    image:
-      'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80',
-
-    overview:
-      'Enterprise RAG solution designed for policy question answering using Azure OpenAI, Cosmos DB, vector search and hybrid retrieval.',
-
-    architecture:
-      'User Query → Query Processing → Hybrid Retrieval → Reranking → Context Assembly → LLM → Grounded Answer',
-
-    contributions: [
-      'Designed an enterprise retrieval-augmented generation workflow for policy documents.',
-      'Implemented semantic and metadata-aware document retrieval.',
-      'Integrated Azure OpenAI for grounded question answering.',
-      'Used vector search and hybrid retrieval for relevant context selection.',
-      'Designed the workflow to reduce unsupported responses through grounded generation.',
-    ],
-
-    technologies:
-      'Python, Azure OpenAI, GPT, Azure Cosmos DB, Vector Search, Hybrid Retrieval, RAG, FastAPI',
-  },
-];
-const TECH_ICONS: Record<string, React.ElementType> = {
-  'Agentic AI': Bot,
-  'LangGraph': Workflow,
-  'VLM': Eye,
-  'RAG': Database,
-  'Azure': Cloud,
-
-  'Machine Learning': Brain,
-  'Regression': TrendingUp,
-  'PCA': ScanLine,
-  'Python': Code2,
-
-  'Generative AI': Sparkles,
-  'Azure OpenAI': Cloud,
-  'Vector Search': Search,
-};
-
-function ProjectTag({
-  label,
-  Icon,
-  color,
-}: {
-  label: string;
-  Icon: React.ElementType;
-  color: string;
-}) {
-  return (
-    <div
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: 5,
-        padding: '6px 9px',
-        borderRadius: 6,
-        border: `1px solid ${color}35`,
-        background: `${color}0D`,
-        color: '#AAB8CC',
-        fontSize: 8.5,
-        fontWeight: 500,
-        whiteSpace: 'nowrap',
-      }}
-    >
-      <Icon
-        size={12}
-        color={color}
-        style={{
-          flexShrink: 0,
-        }}
-      />
-
-      <span>{label}</span>
-    </div>
-  );
-}
-function ProjectDetails({
-  project,
-  onClose,
-}: {
-  project: typeof PROJECTS[0];
-  onClose: () => void;
-}) {
-  return (
-    <div
-      style={{
-        flex: 1,
-        minWidth: 0,
-        background: '#07162B',
-        border: `1px solid ${project.accent}55`,
-        borderRadius: 12,
-        padding: '24px 26px',
-        animation: 'projectDetailsIn 0.35s ease',
-        boxShadow: `0 20px 50px ${project.accent}12`,
-      }}
-    >
-      {/* Header */}
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'flex-start',
-          gap: 20,
-          marginBottom: 20,
-        }}
-      >
-        <div>
-          <div
-            style={{
-              fontSize: 9,
-              fontWeight: 700,
-              color: project.accent,
-              letterSpacing: '1px',
-              marginBottom: 7,
-            }}
-          >
-            PROJECT DETAILS
-          </div>
-
-          <h3
-            style={{
-              margin: 0,
-              fontSize: 20,
-              lineHeight: 1.3,
-              fontWeight: 700,
-              color: '#E0E8F5',
-            }}
-          >
-            {project.title}
-          </h3>
-        </div>
-
-        <button
-          onClick={onClose}
-          style={{
-            border: `1px solid ${project.accent}45`,
-            background: `${project.accent}10`,
-            color: project.accent,
-            borderRadius: 6,
-            padding: '7px 11px',
-            fontSize: 10,
-            fontWeight: 600,
-            cursor: 'pointer',
-            whiteSpace: 'nowrap',
-          }}
-        >
-          ← Back
-        </button>
-      </div>
-
-      {/* Divider */}
-      <div
-        style={{
-          height: 1,
-          background: '#173456',
-          marginBottom: 20,
-        }}
-      />
-
-      {/* Overview */}
-      <div style={{ marginBottom: 20 }}>
-        <div
-          style={{
-            fontSize: 10,
-            fontWeight: 700,
-            color: project.accent,
-            letterSpacing: '0.8px',
-            marginBottom: 8,
-          }}
-        >
-          OVERVIEW
-        </div>
-
-        <p
-          style={{
-            margin: 0,
-            fontSize: 11.5,
-            lineHeight: 1.7,
-            color: '#8FA1BA',
-          }}
-        >
-          {project.overview}
-        </p>
-      </div>
-
-      {/* Architecture */}
-      <div
-        style={{
-          padding: '14px 16px',
-          borderRadius: 9,
-          border: `1px solid ${project.accent}30`,
-          background: `${project.accent}08`,
-          marginBottom: 22,
-        }}
-      >
-        <div
-          style={{
-            fontSize: 9.5,
-            fontWeight: 700,
-            color: project.accent,
-            letterSpacing: '0.8px',
-            marginBottom: 8,
-          }}
-        >
-          ARCHITECTURE
-        </div>
-
-        <div
-          style={{
-            fontSize: 10.5,
-            lineHeight: 1.7,
-            color: '#AAB8CC',
-          }}
-        >
-          {project.architecture}
-        </div>
-      </div>
-
-      {/* Contributions */}
-      <div style={{ marginBottom: 22 }}>
-        <div
-          style={{
-            fontSize: 9.5,
-            fontWeight: 700,
-            color: project.accent,
-            letterSpacing: '0.8px',
-            marginBottom: 12,
-          }}
-        >
-          KEY CONTRIBUTIONS
-        </div>
-
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 10,
-          }}
-        >
-          {project.contributions.map((item) => (
-            <div
-              key={item}
-              style={{
-                display: 'flex',
-                alignItems: 'flex-start',
-                gap: 9,
-              }}
-            >
-              <span
-                style={{
-                  width: 7,
-                  height: 7,
-                  minWidth: 7,
-                  marginTop: 5,
-                  borderRadius: '50%',
-                  background: project.accent,
-                  boxShadow: `0 0 8px ${project.accent}80`,
-                }}
-              />
-
-              <span
-                style={{
-                  fontSize: 10.5,
-                  lineHeight: 1.55,
-                  color: '#8FA1BA',
-                }}
-              >
-                {item}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Technologies */}
-      <div
-        style={{
-          borderTop: '1px solid #173456',
-          paddingTop: 18,
-        }}
-      >
-        <div
-          style={{
-            fontSize: 9.5,
-            fontWeight: 700,
-            color: project.accent,
-            letterSpacing: '0.8px',
-            marginBottom: 8,
-          }}
-        >
-          TECHNOLOGIES
-        </div>
-
-        <p
-          style={{
-            margin: 0,
-            fontSize: 10.5,
-            lineHeight: 1.65,
-            color: '#8293AD',
-          }}
-        >
-          {project.technologies}
-        </p>
-      </div>
-    </div>
-  );
-}
-function ProjectCard({
-  project,
-  delay,
-  selected,
-  onView,
-}: {
-  project: typeof PROJECTS[0];
-  delay: number;
-  selected?: boolean;
-  onView: () => void;
-}) {
-  return (
-    <div
-      className="project-card"
-      style={{
-        background: '#07162B',
-        border: `1px solid ${
-          selected ? project.accent : '#173456'
-        }`,
-        borderRadius: 12,
-        overflow: 'hidden',
-        display: 'flex',
-        flexDirection: 'column',
-        minWidth: 0,
-        animationDelay: `${delay}ms`,
-        boxShadow: selected
-          ? `0 0 30px ${project.accent}12`
-          : 'none',
-      }}
-    >
-      {/* Image */}
-      <div
-        style={{
-          height: 150,
-          background: project.gradient,
-          position: 'relative',
-          overflow: 'hidden',
-          flexShrink: 0,
-        }}
-      >
-        {/* Image */}
-        {project.image && (
-          <img
-            src={project.image}
-            alt={project.title}
-            style={{
-              position: 'absolute',
-              inset: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              opacity: 0.42,
-            }}
-          />
-        )}
-
-        {/* Dark overlay */}
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            // background:
-            //   'linear-gradient(180deg, rgba(78, 96, 126, 0.2), rgba(172, 201, 242, 0.92))',
-          }}
-        />
-
-        {/* Icon */}
-        {/* <div
-          style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            width: 68,
-            height: 68,
-            borderRadius: 18,
-            background: `${project.accent}18`,
-            border: `1px solid ${project.accent}55`,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: 30,
-            backdropFilter: 'blur(8px)',
-            boxShadow: `0 0 30px ${project.accent}20`,
-          }}
-        >
-          {project.icon}
-        </div> */}
-      </div>
-
-      {/* Content */}
-      <div
-        style={{
-          padding: '16px 16px 18px',
-          display: 'flex',
-          flexDirection: 'column',
-          flex: 1,
-        }}
-      >
-        {/* Tags */}
-        <div
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: 5,
-            marginBottom: 13,
-          }}
-        >
-          {project.tags.map((tag, i) => (
-  <TechChip
-    key={tag}
-    label={tag}
-    color={project.tagColors[i] || '#3B82F6'}
-    Icon={TECH_ICONS[tag] || Code2}
-  />
-))}
-        </div>
-
-        {/* Title */}
-        <h3
-          style={{
-            fontSize: 14,
-            fontWeight: 700,
-            color: '#E0E8F5',
-            lineHeight: 1.4,
-            margin: '0 0 9px',
-          }}
-        >
-          {project.title}
-        </h3>
-
-        {/* Description */}
-        <p
-          style={{
-            fontSize: 10.5,
-            color: '#8293AD',
-            lineHeight: 1.6,
-            margin: 0,
-          }}
-        >
-          {project.desc}
-        </p>
-
-        {/* Button */}
-        <button
-          onClick={onView}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 5,
-            background: 'none',
-            border: 'none',
-            padding: 0,
-            marginTop: 18,
-            color: project.accent,
-            fontSize: 11,
-            fontWeight: 600,
-            cursor: 'pointer',
-            fontFamily: 'Inter',
-            alignSelf: 'flex-start',
-          }}
-        >
-          View Project
-          <span
-            style={{
-              fontSize: 14,
-              transition: 'transform 0.2s ease',
-            }}
-          >
-            →
-          </span>
-        </button>
-      </div>
-    </div>
-  );
-}
-
-function ProjectsSection() {
-  const ref = useReveal() as React.RefObject<HTMLElement>;
-
-  const [selectedProject, setSelectedProject] =
-    React.useState<number | null>(null);
-
-  const selected =
-    selectedProject !== null
-      ? PROJECTS[selectedProject]
-      : null;
-
-  return (
-    <section
-      ref={ref}
-      id="projects"
-      className="reveal"
-      style={{
-        borderTop: '1px solid #173456',
-        padding: '56px 0',
-        position: 'relative',
-        zIndex: 1,
-      }}
-    >
-      <div
-        style={{
-          maxWidth: 1100,
-          margin: '0 auto',
-          padding: '0 60px',
-        }}
-        className="section-pad"
-      >
-        {/* Section heading */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'flex-end',
-            justifyContent: 'space-between',
-            marginBottom: 28,
-          }}
-        >
-          <div>
-            <SectionLabel
-              number="03"
-              label="PROJECTS"
-            />
-
-            <h2
-              style={{
-                fontSize: 22,
-                fontWeight: 700,
-                margin: 0,
-              }}
-            >
-              My{' '}
-              <span className="gradient-text">
-                Work
-              </span>
-            </h2>
-          </div>
-
-          {/* {selectedProject === null && (
-            <button
-              style={{
-                background: 'none',
-                border: 'none',
-                cursor: 'pointer',
-                color: '#A855F7',
-                fontSize: 11,
-                fontWeight: 600,
-                fontFamily: 'Inter',
-                display: 'flex',
-                alignItems: 'center',
-                gap: 4,
-              }}
-            >
-              View All Projects
-              <span>→</span>
-            </button>
-          )} */}
-        </div>
-
-        {/* ================================================= */}
-        {/* NORMAL STATE                                      */}
-        {/* ================================================= */}
-
-        {selectedProject === null ? (
-          <div
-            className="projects-grid"
-            style={{
-              display: 'grid',
-              gridTemplateColumns:
-                'repeat(3, minmax(0, 1fr))',
-              gap: 18,
-            }}
-          >
-            {PROJECTS.map((project, index) => (
-              <ProjectCard
-                key={project.title}
-                project={project}
-                delay={index * 80}
-                onView={() =>
-                  setSelectedProject(index)
-                }
-              />
-            ))}
-          </div>
-        ) : (
-          /* ================================================= */
-          /* EXPANDED STATE                                   */
-          /* ================================================= */
-
-          <div
-            className="project-expanded-layout"
-            style={{
-              display: 'grid',
-              gridTemplateColumns:
-                'minmax(300px, 0.85fr) minmax(0, 1.5fr)',
-              gap: 18,
-              alignItems: 'stretch',
-              animation:
-                'projectExpandIn 0.35s ease',
-            }}
-          >
-            {/* LEFT — ORIGINAL PROJECT CARD */}
-            <ProjectCard
-              project={selected!}
-              selected
-              delay={0}
-              onView={() =>
-                setSelectedProject(null)
-              }
-            />
-
-            {/* RIGHT — DETAILS */}
-            <ProjectDetails
-              project={selected!}
-              onClose={() =>
-                setSelectedProject(null)
-              }
-            />
-          </div>
-        )}
-      </div>
-    </section>
-  );
-}
-
+//     technologies:
+//       'Python, LangGraph, LangChain, Azure OpenAI, GPT-4o, GPT-4o Vision, Azure Cosmos DB Vector Search, FastAPI, React, Docker',
+//   },
+
+//   {
+//     title: 'Buy Box Price and Sales Price Prediction',
+
+//     desc: 'Predicted Buy Box and Sales Prices using linear regression and PCA. Analysed key drivers and evaluated with R², RMSE, MAE and MSE.',
+
+//     tags: [
+//       'Machine Learning',
+//       'Regression',
+//       'PCA',
+//       'Python',
+//     ],
+
+//     tagColors: [
+//       '#F472B6',
+//       '#A855F7',
+//       '#60A5FA',
+//       '#3B82F6',
+//     ],
+
+//     gradient:
+//       'linear-gradient(135deg, #0c1428 0%, #101830 50%, #0a1020 100%)',
+
+//     accent: '#A855F7',
+
+//     icon: '📊',
+
+//     image:
+//       'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
+
+//     overview:
+//       'Regression-based pricing prediction project focused on estimating Buy Box Price and Sales Price while identifying important pricing drivers.',
+
+//     architecture:
+//       'Data Preparation → EDA → Feature Engineering → PCA → Regression → Evaluation → Driver Analysis',
+
+//     contributions: [
+//       'Built a regression workflow for Buy Box Price and Sales Price prediction.',
+//       'Applied PCA as part of dimensionality reduction and feature analysis.',
+//       'Analysed important positive and negative pricing drivers.',
+//       'Evaluated model performance using R², Adjusted R², RMSE, MAE and MSE.',
+//       'Used statistical assumptions and model diagnostics to assess regression quality.',
+//     ],
+
+//     technologies:
+//       'Python, Linear Regression, PCA, Feature Engineering, Statistical Analysis, R², Adjusted R², RMSE, MAE, MSE',
+//   },
+
+//   {
+//     title: 'RAG Policy Q&A Assistant',
+
+//     desc: 'Enterprise RAG solution for policy Q&A using Azure OpenAI and Cosmos DB with vector search and hybrid retrieval.',
+
+//     tags: [
+//       'Generative AI',
+//       'RAG',
+//       'Azure OpenAI',
+//       'Vector Search',
+//     ],
+
+//     tagColors: [
+//       '#A855F7',
+//       '#22D3EE',
+//       '#60A5FA',
+//       '#3B82F6',
+//     ],
+
+//     gradient:
+//       'linear-gradient(135deg, #0d0a1e 0%, #120d28 50%, #0a1228 100%)',
+
+//     accent: '#168BFF',
+
+//     icon: '🤖',
+
+//     image:
+//       'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80',
+
+//     overview:
+//       'Enterprise RAG solution designed for policy question answering using Azure OpenAI, Cosmos DB, vector search and hybrid retrieval.',
+
+//     architecture:
+//       'User Query → Query Processing → Hybrid Retrieval → Reranking → Context Assembly → LLM → Grounded Answer',
+
+//     contributions: [
+//       'Designed an enterprise retrieval-augmented generation workflow for policy documents.',
+//       'Implemented semantic and metadata-aware document retrieval.',
+//       'Integrated Azure OpenAI for grounded question answering.',
+//       'Used vector search and hybrid retrieval for relevant context selection.',
+//       'Designed the workflow to reduce unsupported responses through grounded generation.',
+//     ],
+
+//     technologies:
+//       'Python, Azure OpenAI, GPT, Azure Cosmos DB, Vector Search, Hybrid Retrieval, RAG, FastAPI',
+//   },
+// ];
+// const TECH_ICONS: Record<string, React.ElementType> = {
+//   'Agentic AI': Bot,
+//   'LangGraph': Workflow,
+//   'VLM': Eye,
+//   'RAG': Database,
+//   'Azure': Cloud,
+
+//   'Machine Learning': Brain,
+//   'Regression': TrendingUp,
+//   'PCA': ScanLine,
+//   'Python': Code2,
+
+//   'Generative AI': Sparkles,
+//   'Azure OpenAI': Cloud,
+//   'Vector Search': Search,
+// };
+
+// function ProjectTag({
+//   label,
+//   Icon,
+//   color,
+// }: {
+//   label: string;
+//   Icon: React.ElementType;
+//   color: string;
+// }) {
+//   return (
+//     <div
+//       style={{
+//         display: 'flex',
+//         alignItems: 'center',
+//         gap: 5,
+//         padding: '6px 9px',
+//         borderRadius: 6,
+//         border: `1px solid ${color}35`,
+//         background: `${color}0D`,
+//         color: '#AAB8CC',
+//         fontSize: 8.5,
+//         fontWeight: 500,
+//         whiteSpace: 'nowrap',
+//       }}
+//     >
+//       <Icon
+//         size={12}
+//         color={color}
+//         style={{
+//           flexShrink: 0,
+//         }}
+//       />
+
+//       <span>{label}</span>
+//     </div>
+//   );
+// }
+// function ProjectDetails({
+//   project,
+//   onClose,
+// }: {
+//   project: typeof PROJECTS[0];
+//   onClose: () => void;
+// }) {
+//   return (
+//     <div
+//       style={{
+//         flex: 1,
+//         minWidth: 0,
+//         background: '#07162B',
+//         border: `1px solid ${project.accent}55`,
+//         borderRadius: 12,
+//         padding: '24px 26px',
+//         animation: 'projectDetailsIn 0.35s ease',
+//         boxShadow: `0 20px 50px ${project.accent}12`,
+//       }}
+//     >
+//       {/* Header */}
+//       <div
+//         style={{
+//           display: 'flex',
+//           justifyContent: 'space-between',
+//           alignItems: 'flex-start',
+//           gap: 20,
+//           marginBottom: 20,
+//         }}
+//       >
+//         <div>
+//           <div
+//             style={{
+//               fontSize: 9,
+//               fontWeight: 700,
+//               color: project.accent,
+//               letterSpacing: '1px',
+//               marginBottom: 7,
+//             }}
+//           >
+//             PROJECT DETAILS
+//           </div>
+
+//           <h3
+//             style={{
+//               margin: 0,
+//               fontSize: 20,
+//               lineHeight: 1.3,
+//               fontWeight: 700,
+//               color: '#E0E8F5',
+//             }}
+//           >
+//             {project.title}
+//           </h3>
+//         </div>
+
+//         <button
+//           onClick={onClose}
+//           style={{
+//             border: `1px solid ${project.accent}45`,
+//             background: `${project.accent}10`,
+//             color: project.accent,
+//             borderRadius: 6,
+//             padding: '7px 11px',
+//             fontSize: 10,
+//             fontWeight: 600,
+//             cursor: 'pointer',
+//             whiteSpace: 'nowrap',
+//           }}
+//         >
+//           ← Back
+//         </button>
+//       </div>
+
+//       {/* Divider */}
+//       <div
+//         style={{
+//           height: 1,
+//           background: '#173456',
+//           marginBottom: 20,
+//         }}
+//       />
+
+//       {/* Overview */}
+//       <div style={{ marginBottom: 20 }}>
+//         <div
+//           style={{
+//             fontSize: 10,
+//             fontWeight: 700,
+//             color: project.accent,
+//             letterSpacing: '0.8px',
+//             marginBottom: 8,
+//           }}
+//         >
+//           OVERVIEW
+//         </div>
+
+//         <p
+//           style={{
+//             margin: 0,
+//             fontSize: 11.5,
+//             lineHeight: 1.7,
+//             color: '#8FA1BA',
+//           }}
+//         >
+//           {project.overview}
+//         </p>
+//       </div>
+
+//       {/* Architecture */}
+//       <div
+//         style={{
+//           padding: '14px 16px',
+//           borderRadius: 9,
+//           border: `1px solid ${project.accent}30`,
+//           background: `${project.accent}08`,
+//           marginBottom: 22,
+//         }}
+//       >
+//         <div
+//           style={{
+//             fontSize: 9.5,
+//             fontWeight: 700,
+//             color: project.accent,
+//             letterSpacing: '0.8px',
+//             marginBottom: 8,
+//           }}
+//         >
+//           ARCHITECTURE
+//         </div>
+
+//         <div
+//           style={{
+//             fontSize: 10.5,
+//             lineHeight: 1.7,
+//             color: '#AAB8CC',
+//           }}
+//         >
+//           {project.architecture}
+//         </div>
+//       </div>
+
+//       {/* Contributions */}
+//       <div style={{ marginBottom: 22 }}>
+//         <div
+//           style={{
+//             fontSize: 9.5,
+//             fontWeight: 700,
+//             color: project.accent,
+//             letterSpacing: '0.8px',
+//             marginBottom: 12,
+//           }}
+//         >
+//           KEY CONTRIBUTIONS
+//         </div>
+
+//         <div
+//           style={{
+//             display: 'flex',
+//             flexDirection: 'column',
+//             gap: 10,
+//           }}
+//         >
+//           {project.contributions.map((item) => (
+//             <div
+//               key={item}
+//               style={{
+//                 display: 'flex',
+//                 alignItems: 'flex-start',
+//                 gap: 9,
+//               }}
+//             >
+//               <span
+//                 style={{
+//                   width: 7,
+//                   height: 7,
+//                   minWidth: 7,
+//                   marginTop: 5,
+//                   borderRadius: '50%',
+//                   background: project.accent,
+//                   boxShadow: `0 0 8px ${project.accent}80`,
+//                 }}
+//               />
+
+//               <span
+//                 style={{
+//                   fontSize: 10.5,
+//                   lineHeight: 1.55,
+//                   color: '#8FA1BA',
+//                 }}
+//               >
+//                 {item}
+//               </span>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+
+//       {/* Technologies */}
+//       <div
+//         style={{
+//           borderTop: '1px solid #173456',
+//           paddingTop: 18,
+//         }}
+//       >
+//         <div
+//           style={{
+//             fontSize: 9.5,
+//             fontWeight: 700,
+//             color: project.accent,
+//             letterSpacing: '0.8px',
+//             marginBottom: 8,
+//           }}
+//         >
+//           TECHNOLOGIES
+//         </div>
+
+//         <p
+//           style={{
+//             margin: 0,
+//             fontSize: 10.5,
+//             lineHeight: 1.65,
+//             color: '#8293AD',
+//           }}
+//         >
+//           {project.technologies}
+//         </p>
+//       </div>
+//     </div>
+//   );
+// }
+// function ProjectCard({
+//   project,
+//   delay,
+//   selected,
+//   onView,
+// }: {
+//   project: typeof PROJECTS[0];
+//   delay: number;
+//   selected?: boolean;
+//   onView: () => void;
+// }) {
+//   return (
+//     <div
+//       className="project-card"
+//       style={{
+//         background: '#07162B',
+//         border: `1px solid ${
+//           selected ? project.accent : '#173456'
+//         }`,
+//         borderRadius: 12,
+//         overflow: 'hidden',
+//         display: 'flex',
+//         flexDirection: 'column',
+//         minWidth: 0,
+//         animationDelay: `${delay}ms`,
+//         boxShadow: selected
+//           ? `0 0 30px ${project.accent}12`
+//           : 'none',
+//       }}
+//     >
+//       {/* Image */}
+//       <div
+//         style={{
+//           height: 150,
+//           background: project.gradient,
+//           position: 'relative',
+//           overflow: 'hidden',
+//           flexShrink: 0,
+//         }}
+//       >
+//         {/* Image */}
+//         {project.image && (
+//           <img
+//             src={project.image}
+//             alt={project.title}
+//             style={{
+//               position: 'absolute',
+//               inset: 0,
+//               width: '100%',
+//               height: '100%',
+//               objectFit: 'cover',
+//               opacity: 0.42,
+//             }}
+//           />
+//         )}
+
+//         {/* Dark overlay */}
+//         <div
+//           style={{
+//             position: 'absolute',
+//             inset: 0,
+//             // background:
+//             //   'linear-gradient(180deg, rgba(78, 96, 126, 0.2), rgba(172, 201, 242, 0.92))',
+//           }}
+//         />
+
+//         {/* Icon */}
+//         {/* <div
+//           style={{
+//             position: 'absolute',
+//             top: '50%',
+//             left: '50%',
+//             transform: 'translate(-50%, -50%)',
+//             width: 68,
+//             height: 68,
+//             borderRadius: 18,
+//             background: `${project.accent}18`,
+//             border: `1px solid ${project.accent}55`,
+//             display: 'flex',
+//             alignItems: 'center',
+//             justifyContent: 'center',
+//             fontSize: 30,
+//             backdropFilter: 'blur(8px)',
+//             boxShadow: `0 0 30px ${project.accent}20`,
+//           }}
+//         >
+//           {project.icon}
+//         </div> */}
+//       </div>
+
+//       {/* Content */}
+//       <div
+//         style={{
+//           padding: '16px 16px 18px',
+//           display: 'flex',
+//           flexDirection: 'column',
+//           flex: 1,
+//         }}
+//       >
+//         {/* Tags */}
+//         <div
+//           style={{
+//             display: 'flex',
+//             flexWrap: 'wrap',
+//             gap: 5,
+//             marginBottom: 13,
+//           }}
+//         >
+//           {project.tags.map((tag, i) => (
+//   <TechChip
+//     key={tag}
+//     label={tag}
+//     color={project.tagColors[i] || '#3B82F6'}
+//     Icon={TECH_ICONS[tag] || Code2}
+//   />
+// ))}
+//         </div>
+
+//         {/* Title */}
+//         <h3
+//           style={{
+//             fontSize: 14,
+//             fontWeight: 700,
+//             color: '#E0E8F5',
+//             lineHeight: 1.4,
+//             margin: '0 0 9px',
+//           }}
+//         >
+//           {project.title}
+//         </h3>
+
+//         {/* Description */}
+//         <p
+//           style={{
+//             fontSize: 10.5,
+//             color: '#8293AD',
+//             lineHeight: 1.6,
+//             margin: 0,
+//           }}
+//         >
+//           {project.desc}
+//         </p>
+
+//         {/* Button */}
+//         <button
+//           onClick={onView}
+//           style={{
+//             display: 'flex',
+//             alignItems: 'center',
+//             gap: 5,
+//             background: 'none',
+//             border: 'none',
+//             padding: 0,
+//             marginTop: 18,
+//             color: project.accent,
+//             fontSize: 11,
+//             fontWeight: 600,
+//             cursor: 'pointer',
+//             fontFamily: 'Inter',
+//             alignSelf: 'flex-start',
+//           }}
+//         >
+//           View Project
+//           <span
+//             style={{
+//               fontSize: 14,
+//               transition: 'transform 0.2s ease',
+//             }}
+//           >
+//             →
+//           </span>
+//         </button>
+//       </div>
+//     </div>
+//   );
+// }
+
+// function ProjectsSection() {
+//   const ref = useReveal() as React.RefObject<HTMLElement>;
+
+//   const [selectedProject, setSelectedProject] =
+//     React.useState<number | null>(null);
+
+//   const selected =
+//     selectedProject !== null
+//       ? PROJECTS[selectedProject]
+//       : null;
+
+//   return (
+//     <section
+//       ref={ref}
+//       id="projects"
+//       className="reveal"
+//       style={{
+//         borderTop: '1px solid #173456',
+//         padding: '56px 0',
+//         position: 'relative',
+//         zIndex: 1,
+//       }}
+//     >
+//       <div
+//         style={{
+//           maxWidth: 1100,
+//           margin: '0 auto',
+//           padding: '0 60px',
+//         }}
+//         className="section-pad"
+//       >
+//         {/* Section heading */}
+//         <div
+//           style={{
+//             display: 'flex',
+//             alignItems: 'flex-end',
+//             justifyContent: 'space-between',
+//             marginBottom: 28,
+//           }}
+//         >
+//           <div>
+//             <SectionLabel
+//               number="03"
+//               label="PROJECTS"
+//             />
+
+//             <h2
+//               style={{
+//                 fontSize: 22,
+//                 fontWeight: 700,
+//                 margin: 0,
+//               }}
+//             >
+//               My{' '}
+//               <span className="gradient-text">
+//                 Work
+//               </span>
+//             </h2>
+//           </div>
+
+//           {/* {selectedProject === null && (
+//             <button
+//               style={{
+//                 background: 'none',
+//                 border: 'none',
+//                 cursor: 'pointer',
+//                 color: '#A855F7',
+//                 fontSize: 11,
+//                 fontWeight: 600,
+//                 fontFamily: 'Inter',
+//                 display: 'flex',
+//                 alignItems: 'center',
+//                 gap: 4,
+//               }}
+//             >
+//               View All Projects
+//               <span>→</span>
+//             </button>
+//           )} */}
+//         </div>
+
+//         {/* ================================================= */}
+//         {/* NORMAL STATE                                      */}
+//         {/* ================================================= */}
+
+//         {selectedProject === null ? (
+//           <div
+//             className="projects-grid"
+//             style={{
+//               display: 'grid',
+//               gridTemplateColumns:
+//                 'repeat(3, minmax(0, 1fr))',
+//               gap: 18,
+//             }}
+//           >
+//             {PROJECTS.map((project, index) => (
+//               <ProjectCard
+//                 key={project.title}
+//                 project={project}
+//                 delay={index * 80}
+//                 onView={() =>
+//                   setSelectedProject(index)
+//                 }
+//               />
+//             ))}
+//           </div>
+//         ) : (
+//           /* ================================================= */
+//           /* EXPANDED STATE                                   */
+//           /* ================================================= */
+
+//           <div
+//             className="project-expanded-layout"
+//             style={{
+//               display: 'grid',
+//               gridTemplateColumns:
+//                 'minmax(300px, 0.85fr) minmax(0, 1.5fr)',
+//               gap: 18,
+//               alignItems: 'stretch',
+//               animation:
+//                 'projectExpandIn 0.35s ease',
+//             }}
+//           >
+//             {/* LEFT — ORIGINAL PROJECT CARD */}
+//             <ProjectCard
+//               project={selected!}
+//               selected
+//               delay={0}
+//               onView={() =>
+//                 setSelectedProject(null)
+//               }
+//             />
+
+//             {/* RIGHT — DETAILS */}
+//             <ProjectDetails
+//               project={selected!}
+//               onClose={() =>
+//                 setSelectedProject(null)
+//               }
+//             />
+//           </div>
+//         )}
+//       </div>
+//     </section>
+//   );
+// }
+< Projects></Projects>
 // ── Experience Section ───────────────────────────────────────────────────────
 const BULLETS = [
   'Built a supervisor-led multi-agent advisory assistant using LangGraph',
@@ -2950,14 +2951,14 @@ function ExperienceSection() {
                 <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8, marginBottom: 6 }}>
                   <div>
                     <h3 style={{ fontSize: 15, fontWeight: 700, color: '#E0E8F5', margin: '0 0 4px' }}>
-                      Prolytics IT Private Limited
+                      Macro Solution Private Limited
                     </h3>
                     <p style={{ fontSize: 11.5, color: '#A78BFA', fontWeight: 500, margin: '0 0 2px' }}>
                       AI/ML Engineer (Agentic AI &amp; Generative AI Systems)
                     </p>
-                    <p style={{ fontSize: 10, color: '#8293AD', margin: 0 }}>
+                    {/* <p style={{ fontSize: 10, color: '#8293AD', margin: 0 }}>
                       Client: <span style={{ color: '#60A5FA' }}>Syngenta — Global Agribusiness</span> · Bengaluru, India
-                    </p>
+                    </p> */}
                   </div>
                   <span style={{
                     fontSize: 9, padding: '4px 10px', borderRadius: 4,
@@ -3156,7 +3157,7 @@ export default function App() {
         <HeroSection />
         <AboutSection />
         <SkillsSection />
-        <ProjectsSection />
+        <Projects />
         <ExperienceSection />
         <ContactSection />
       </main>
