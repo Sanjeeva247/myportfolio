@@ -31,7 +31,7 @@ import {
   Boxes,
 } from 'lucide-react';
 
-import './Projects.css';
+import './projects.css';
 
 const TAG_ICONS = {
   'Agentic AI': Workflow,
