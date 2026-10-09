@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import portraitImg from '@/imports/sanjeeva_hero_section.png'
 import aboutimage from '@/imports/SANJEEV.png'
-import Projects from './Projects';
+import Projects from './projects.jsx';
 import {
   SiPython,
   SiReact,
